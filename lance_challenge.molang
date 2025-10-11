@@ -1,0 +1,7 @@
+(q.entity.in_battle() == false) ? {
+    q.run_command('execute at ' + q.entity.uuid + ' run opendialogue lance_auto @a[distance=..5,limit=1,tag=!InDialogue,tag=!Dialogue1]');
+    q.run_command('execute at ' + q.entity.uuid + ' if entity @a[distance=..5,limit=1,tag=!InDialogue,tag=!Lance] run runmolangscript cobblemon:start_battle @a[distance=..5,limit=1,tag=!InDialogue, tag=!Lance] ' + q.entity.uuid);
+};
+q.entity.data.ticks_alive = q.entity.data.ticks_alive + 1;
+q.entity.save_data();
+return 1;
